@@ -1,13 +1,13 @@
 <head>
-  <title>traceUp</title>
+    <title>traceUp</title>
 </head>
 
 <body>
-  {{> map}}
+	{{> header}}
+    {{> login}} 
+    {{#if currentUser}}
+    {{> controls}} 
+    {{/if}}    
+    {{> footer}}
 </body>
 
-<template name="map">
-  <div class="map-container">
-    {{> googleMap name="map" options=mapOptions}}
-  </div>
-</template>

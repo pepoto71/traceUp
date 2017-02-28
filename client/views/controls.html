@@ -1,0 +1,24 @@
+<template name="controls">
+    {{#if traceMe}}
+    <button type="button" class="traceMe">TraceMe</button>
+    {{/if}} {{#if incognito}}
+    <button type="button" class="incognito">Incognito</button>
+    {{/if}}
+    <label for='startdate' class='labeldate'>StartDate</label>
+    <input type="date" name='startdate' class='startdate' />
+    <label for='enddate' class='labeldate'>EndDate</label>
+    <input type="date" name='enddate' class='enddate' />
+    {{#if dateinput}}
+    <button type="button" class="showMap">ShowTrace</button> 
+    {{#if showMap}}  
+    {{> map}} 
+    {{/if}}
+    {{/if}}
+    <ul> <h2>Path</h2>
+    {{#each path}} 
+    {{userId}} 
+    {{#each locations}}
+        <li>{{lat}},{{lng}}->{{date}}</li>
+        {{/each}} {{/each}}
+    </ul>
+</template>
